@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/popper.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - BigHits</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+
+<body>
+    @using (Html.BeginForm("Index", "Movies"))
+    {
+
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <a href=""> <img src="/Image/logo.png" width="75" height="50" /> </a>
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <a class="navbar-brand" href="/">  </a>
+                    <ul class="nav navbar-nav mr-auto">
+                        <li style="font-size:small" class="nav-item"><a href="/" class="nav-link"><strong>Home</strong></a></li>
+                        <li style="font-size:small" class="nav-item"><a href="/Home/About" class="nav-link">About</a></li>
+                        <li style="font-size:small" class="nav-item"><a href="/Home/Contact" class="nav-link">Contact</a></li>
+                        <li style="font-size:small" class=" nav-item"> <a href="/Movies/Index" class="nav-link">Movies</a></li>
+                        <li style="font-size:small" class=" nav-item"> <a href="/ShoppingCart/Index" class="nav-link">Cart</a></li>
+                        @*<li> <input class="form-control form-control-sm ml-3 w-75" id="searching" name="searching" type="text" placeholder="Search Movies" aria-label="Search" /> <br /> </li>*@
+
+                    </ul>
+
+                    <form class="form-inline">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <input class="form-control form-control-sm ml-3 w-75" id="searching" name="searching" type="text" placeholder="Search Movies" aria-label="Search" /> &nbsp; &nbsp; &nbsp; &nbsp;
+                    </form>
+
+                    @Html.Partial("_LoginPartial")
+
+                    @*<ul class="nav navbar-nav navbar-right mr-auto">
+                <li class="nav-item"><a href="/Account/Register" id="registerLink" class="nav-link">Register</a></li>
+                <li class="nav-item"><a href="/Account/Login" id="loginLink" class="nav-link">Log in</a></li>
+            </ul>*@
+
+                </div>
+            </div>
+
+        </nav>
+    }
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - BigHits.Inc</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,155 @@
+﻿@model IEnumerable<BigHits.Models.Movie>
+
+@{
+    ViewBag.Title = "Movies";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/popper.min.js"></script>
+
+<br />
+<h2 style="font-family:'Trebuchet MS';color:black">
+    Movies
+    <i class="fa fa-film" aria-hidden="true"></i>
+</h2> <br />
+
+
+
+<!-- Search form -->
+@*@using (Html.BeginForm("Index", "Movies"))
+    {
+        <form class="form-inline">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input class="form-control form-control-sm ml-3 w-75" id="searching" name="searching" type="text" placeholder="Search Movies" aria-label="Search" /> <br /> <br />
+        </form>
+    }*@
+
+
+
+@if (Model.Count() == 0)
+{
+    <tr>
+        <td colspan="3" style="color:red">
+            <p>Sorry: Movie Is Not Available</p>
+        </td>
+    </tr>
+}
+else
+{
+
+
+
+    @*<table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Genre.GenreType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MoviesName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImgPath)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReYear)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UnitPrice)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Rating)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Genre.GenreType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MoviesName)
+                    </td>
+                    <td>
+                        <img src="@Url.Content("~/Image/" + System.IO.Path.GetFileName(item.ImgPath))" alt="" width="75" , height="100" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReYear)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @String.Format("{0:c}", item.UnitPrice)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rating)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.MovieID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.MovieID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.MovieID }) |
+                        @Html.ActionLink("Add to Cart", "OrderNow", "ShoppingCart", new { id = item.MovieID }, null)
+                    </td>
+                </tr>
+            }
+
+        </table>*@
+
+
+
+    @*<h3>Top 10 Items In Our Store</h3>*@
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col-lg-3">
+                <a href="@Url.Action("Details","Movies",new { id = item.MovieID })">
+                    <img src="@Url.Content("~/Image/" + System.IO.Path.GetFileName(item.ImgPath))" alt="" width="175" , height="235" />
+                    <br />
+
+                    <div class="name"><strong>@item.MoviesName</strong></div>
+                </a>
+                <strong>$@String.Format("{0:n2}", item.UnitPrice) </strong><br />
+                <strong>@Html.ActionLink("Add to Cart", "OrderNow", "ShoppingCart", new { id = item.MovieID }, null) </strong>
+                <br /> <br />
+            </div>
+
+
+
+
+        }
+
+
+
+    </div>
+    @Html.ActionLink("Add New Movie", "Create", "Movies", new { @class = "btn btn-primary" })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

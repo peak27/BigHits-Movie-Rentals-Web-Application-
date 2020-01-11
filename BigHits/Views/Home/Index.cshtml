@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Big Hits - Movie Rentals.";
+}
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>*@
+<link href="~/CSS/Movie.css" rel="stylesheet" />
+<br />
+<div class="jumbotron">
+    <br /> <br /><br /> <br />
+    <div style="position:absolute; left:50px; top:225px;" class="title">
+        <h1 style="font-family:'Cooper Black'">Big Hits.</h1>
+        @*<p class="lead">Big Hits is a online retail business that rents home videos such as movies, prerecorded TV shows, video game discs and other content.</p>*@
+        <p><a href="http://localhost:50056/Movies/Index" class="btn btn-primary btn-lg">Browse Movies &raquo;</a></p>
+    </div>
+</div>
+<br /><br />
+
+<div>
+    <h3 style="font-family:'Franklin Gothic'">
+        What's Hot!&nbsp;
+
+        <i class="fas fa-fire" aria-hidden="true">
+        </i>
+    </h3>
+    <iframe width="1110" height="615" src="https://www.youtube.com/embed/TcMBFSGVi1c?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<br /> <br />
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>New Releases</h2>
+        <img src="~/Images/New-Releases.jpg" alt="Avengers Endgame" width="250" height='350' />
+        <p>
+            List of New Release movies playing on Netflix, Amazon, iTunes, HBO and DVD. Sort by critic rating, filter by genre, watch trailers and read reviews.
+        </p>
+        <p><a class="btn btn-primary" href="">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Most Viewed</h2>
+        <img src="~/Images/Most-Viewed.jpg" alt="Avengers Endgame" width="250" height='350' />
+        <p>The most popular (and most famous) movies in a global aspect (or internationally). These are the most viewed films of all time</p>
+        <p><a class="btn btn-primary" href="">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Top Ratings</h2>
+        <img src="~/Images/Top-Rated.jpg" alt="Avengers Endgame" width="250" height='350' />
+        <p>Top Rated movies in a global aspect (or internationally). These are the highest rated films of all time</p>
+        <p><a class="btn btn-primary" href="">Learn more &raquo;</a></p>
+    </div>
+</div>

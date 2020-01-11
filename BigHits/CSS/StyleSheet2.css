@@ -1,0 +1,10 @@
+﻿.nav-logo {
+    position: absolute;
+    left: 60px;
+    top: 0;
+}
+
+
+#errmsg {
+    color:red;
+}

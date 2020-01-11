@@ -1,0 +1,56 @@
+﻿@model BigHits.Models.EmailFormModel
+
+@{
+    ViewBag.Title = "Contact Us";
+}
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' />
+      <br />
+<h2 style="font-family:Berlin Sans FB Demi"><i class='fas fa-phone-volume' style='font-size:36px'></i>
+    @ViewBag.Title.
+    </h2>
+<br />
+
+
+
+@using (Html.BeginForm("Contact", "Home"))
+{
+    @Html.AntiForgeryToken()
+    <h5 style="color:bisque"><i class='fas fa-broadcast-tower' style='font-size:36px'></i>
+    Send Us Your Comments!!
+    </h5>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.ToEmail, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.ToEmail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ToEmail)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.EmailSubject, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.EmailSubject, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.EmailSubject)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.EMailBody, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.EMailBody, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.EMailBody)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-primary" value="Send" />
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

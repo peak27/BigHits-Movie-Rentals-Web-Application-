@@ -1,0 +1,25 @@
+﻿.jumbotron {
+    position: relative;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.9)), url("/Images/Movies-bg.jpg");
+    background-size: cover;
+    min-height: 400px;
+ 
+}
+
+
+
+h1 {
+    text-shadow: 2px 2px #FF0000;
+}
+
+
+.child {
+    display: inline-block;
+}
+
+
+
+
+
+
+
