@@ -1,1 +1,1 @@
-# Bigh
+# BigHits (Movie Rentals Web Application)
