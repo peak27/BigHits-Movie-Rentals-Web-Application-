@@ -16,7 +16,3 @@
 ## Contributing
 &nbsp;&nbsp;&nbsp;As this website contains good foundation of the the e-commerce website we viewers can utilze it by adding even more advance recomender system for the movies, adding APIs to cover even bigger range of movies collections with advance and fradulante detecting checkout systems and more. 
 
-## Credits 
-&nbsp;&nbsp;&nbsp;This was an individual project I did in my sophomore year.
-
-**License:** Licenced by me.
